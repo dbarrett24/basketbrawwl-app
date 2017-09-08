@@ -1,0 +1,203 @@
+
+.nav-dir{
+    width: 100%;
+    position: absolute;
+    bottom: -30px;
+    z-index: 5;
+}
+.headings-dir{
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    bottom: -40px;
+}
+.player-header-1{
+    width: 100%;
+    height: 30vh;
+    background: url("../../images/Background/black background.png");
+    position: fixed;
+    z-index: 1;
+}
+.logo-2{
+    width: 7%;
+    height: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.selectPlayer{
+    color: gray;
+    font-family: "Roboto-Regular";
+    font-size: 26px;
+    position: absolute;
+}
+.player-information-wrapper-left{
+    margin: 0 auto;
+    padding-right: 75px;
+    text-align: left;
+    position: fixed;
+    left: 29%;
+    float: left;
+    display: none;
+}
+.player-information-wrapper-right{
+    margin: 0 auto;
+    padding-left: 75px;
+    text-align: right;
+    position: fixed;
+    right: 29%;
+    float: right;
+    display: none;
+}
+.playerName{
+    color: gray;
+    font-family: "Roboto-Regular";
+    font-size: 29px;
+    position: relative;
+}
+.plyrPosition{
+    color: gray;
+    font-family: "Roboto-Regular";
+    font-size: 22px;
+    position: relative;
+}
+.statsListLeft{
+    color: gray;
+    font-family: "Roboto-Regular";
+    font-size: 26px;
+    position: relative;
+    list-style-type: none;
+}
+.statsListRight{
+    color: gray;
+    font-family: "Roboto-Regular";
+    font-size: 26px;
+    position: relative;
+    list-style-type: none;
+}
+.player-heads{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    overflow: hidden;
+}
+.portrait-wrapper-1{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+.portrait-wrapper-2{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+.player-portrait-1{
+    width: 75%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  
+}
+.player-portrait-2{
+    width: 75%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+}
+.player-portrait-1 img{
+    height: 250px;
+    position: relative;
+    align-self: flex-end;
+    opacity: 0.9;
+}
+.player-portrait-2 img{
+    height: 250px;
+    position: relative;
+    align-self: flex-end;
+    opacity: 0.9;
+}
+.team-logo-bg {
+    clear: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: auto;
+    
+}
+.leftBG {
+    position: absolute;
+    height: 600px;
+    opacity: 0.06;
+    left: 0;
+    right: 0;
+    transform: rotate(12deg);
+    margin: 0 auto; 
+}
+.rightBG {
+    position: absolute;
+    height: 600px;
+    opacity: 0.06;
+    left: 0;
+    right: 0;
+    transform: rotate(12deg);
+    margin: 0 auto; 
+}
+
+.roster-logo img{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: auto;
+}
+.roster-logo div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: auto;
+}
+.ready-btn{
+    width: 105px;
+    border-radius: 20px;
+    background-color: #f7ad45;
+    border: none;
+    padding: 10px 13px;
+    color: #fff;
+    font-family: "Roboto-Regular";
+    margin: 0 auto;
+}
+.ready-btn:hover{
+    border-radius: 20px;
+    background-color: #FF9800;
+    border: none;
+    padding: 10px 13px;
+    color: #fff;
+    font-family: "Roboto-Regular";
+    transform: scale(1.025);
+    cursor: pointer;
+}
+
+.ready-btn:focus{
+    outline: none;
+    
+}
+/*active (player mode)*/
+
+
+

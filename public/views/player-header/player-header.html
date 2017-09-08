@@ -1,0 +1,54 @@
+<header class="player-header-1">
+    <img src="../../images/icons/Logo.png" class="logo-2">
+
+    
+    <section class="player-heads">
+        <div class="portrait-wrapper-1">
+            <div class="team-logo-bg">
+                <img class="leftBG" ng-src="{{main.leftPlayer.teamlogo}}"></img>
+            </div>
+            <div class="player-portrait-1">
+                <img ng-src="{{main.leftPlayer.headimg || '../../images/Player heads/empty person.png'}}">
+                <p class="selectPlayer"><strong>Select a player</strong></p>
+            </div>
+            <div class="player-information-wrapper-left">
+                <p class="playerName"><strong>{{main.leftPlayer.playername}}</strong></p>
+                <p class="plyrPosition"><strong>{{main.leftPlayer.position}}</strong></p>
+                <br>
+                <ul>
+                    <li class="statsListLeft">Ppg:  {{main.leftPlayer.ppg}}</li>
+                    <li class="statsListLeft">Blks:  {{main.leftPlayer.bpg}}</li>
+                    <li class="statsListLeft">FG%:  {{main.leftPlayer.fgpct}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="roster-logo">
+            <img ng-src="{{logo}}">
+            <div ><a ui-sref="fight-view"><button class="ready-btn" ng-click="">READY</button></a></div>
+        </div>
+
+        <div class="portrait-wrapper-2">
+            <div class="team-logo-bg">
+                <img class="rightBG" ng-src="{{main.rightPlayer.teamlogo}}">
+            </div>
+            <div class="player-information-wrapper-right">
+                <p class="playerName"><strong>{{main.rightPlayer.playername}}</strong></p>
+                <p class="plyrPosition"><strong>{{main.rightPlayer.position}}</strong></p>
+                <br>
+                <ul>
+                    <li class="statsListRight">Ppg:  {{main.rightPlayer.ppg}}</li>
+                    <li class="statsListRight">Blks:  {{main.rightPlayer.bpg}}</li>
+                    <li class="statsListRight">FG%:  {{main.rightPlayer.fgpct}}</li>
+                </ul>
+            </div>
+            <div class="player-portrait-2">
+                <img ng-src="{{main.rightPlayer.headimg || '../../images/Player heads/empty person.png'}}">
+                <p class="selectPlayer"><strong>Select a player</strong></p>
+            </div>
+        </div>
+    </section>
+
+<nav-dir class="nav-dir"></nav-dir>
+</header>
+
