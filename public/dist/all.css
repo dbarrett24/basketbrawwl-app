@@ -423,12 +423,13 @@ input:focus {
   margin: 65px auto; }
 
 .carousel-wrapper {
-  display: flex;
-  align-items: center;
+  /* display: flex;
+    align-items: center; */
   margin: 60px; }
 
 .card {
   height: 40vh;
+  width: 17%;
   background: #C9C9C9;
   border-radius: 15px;
   margin: 10px 25px;
