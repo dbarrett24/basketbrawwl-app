@@ -3,7 +3,7 @@
 <!--Carousal-->
 <div  class="carousel-wrapper" id="team-slider" bc-flickity="{{flickityOptions}}">
   
-  <div class="card" ng-repeat="teamData in teamData"><p>{{teamData.city}}</p><a ui-sref="team-roster({teamId: '{{teamData.name}}' })"><img ng-src="{{teamData.logo}}"><p>{{teamData.shortname}}</p></a></div>
+  <div class="card carousel-cell" ng-repeat="teamData in teamData"><p>{{teamData.city}}</p><a ui-sref="team-roster({teamId: '{{teamData.name}}' })"><img ng-src="{{teamData.logo}}"><p>{{teamData.shortname}}</p></a></div>
   <!-- <div class="card carousel-cell"><a ui-sref="team-roster({teamId: '{{teamData[0].name}}' })"><img ng-src="{{teamData[0].logo}}"><p>{{teamData[0].shortname}}</p></a></div>
   <div class="card carousel-cell"><a ui-sref="team-roster({teamId: '{{teamData[1].name}}' })"><img ng-src="{{teamData[1].logo}}"><p>{{teamData[1].shortname}}</p></a></div>
   <div class="card carousel-cell"><a ui-sref="team-roster({teamId: '{{teamData[2].name}}' })"><img ng-src="{{teamData[2].logo}}"><p>{{teamData[2].shortname}}</p></a></div>
