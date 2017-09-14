@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-angular.module("brawlApp", ["ui.router", "ngAnimate"]).config(function ($stateProvider, $urlRouterProvider) {
+angular.module("brawlApp", ['ui.router', 'ngAnimate', 'bc.Flickity']).config(function ($stateProvider, $urlRouterProvider) {
     // var mainState = {
     //     name: 'main',
     //     views: {
@@ -117,7 +117,6 @@ angular.module("brawlApp").service("mainService", function ($http) {
     this.test1 = "Service is working";
     // *********************************** 
 
-
     // ****************************************
     //     this.getPlayers = function(){
     //         return $http ({
@@ -183,6 +182,7 @@ angular.module("brawlApp").service("mainService", function ($http) {
             method: 'GET',
             url: "../JSON/teams.json"
         }).then(function (response) {
+
             // console.log(response.data)
             return response.data;
         });
@@ -243,7 +243,7 @@ angular.module("brawlApp").controller("player-headerCtrl", function ($scope, mai
 });
 "use strict";
 
-angular.module("brawlApp").controller("team-choicesCtrl", function ($scope, mainService, $stateParams) {
+angular.module("brawlApp").controller("team-choicesCtrl", function ($scope, mainService, $stateParams, $timeout, FlickityService) {
     $(document).ready(function () {
         $('.player-header-1').css('position', 'relative');
         // $('.carousel-wrapper').slick({
@@ -254,22 +254,47 @@ angular.module("brawlApp").controller("team-choicesCtrl", function ($scope, main
         //     autoplaySpeed: 3500
         // });
 
-        $('.carousel-wrapper').flickity({
-            // options
-            cellSelector: '.carousel-cell',
-            cellAlign: 'left',
-            pageDots: false,
-            // groupCells: 3,
-            adaptiveHeight: false,
-            imagesLoaded: true,
-            autoPlay: true,
-            contain: true
-        });
+        // $('.carousel-wrapper').flickity({
+        //     // options
+        //     cellSelector: '.carousel-cell',
+        //     cellAlign: 'left',
+        //     pageDots: false,
+        //     // groupCells: 3,
+        //     adaptiveHeight: false,
+        //     imagesLoaded: true,
+        //     autoPlay: true,
+        //     contain: true
+        //   });
     });
+    $scope.flickityOptions = {
+        // options
+        cellSelector: '.carousel-cell',
+        cellAlign: 'left',
+        pageDots: false,
+        // groupCells: 3,
+        adaptiveHeight: false,
+        imagesLoaded: true,
+        autoPlay: true,
+        contain: true
+    };
 
     mainService.getTeams().then(function (teamData) {
+
         $scope.teamData = teamData;
         console.log($scope.teamData);
+
+        // Get the element that should hold the slider
+        var element = angular.element(document.getElementById('team-slider'));
+        console.log(element);
+
+        // NOTE: When fetching remote data, we initialize the Flickity
+        // instance inside of a $timeout. This ensures that the slides
+        // have already been assigned to scope before the slider is
+        // initialized.
+        $timeout(function () {
+            // Initialize our Flickity instance
+            FlickityService.create(element[0], element[0].id);
+        });
     });
 });
 "use strict";
@@ -326,6 +351,7 @@ angular.module("brawlApp").controller("rosterCtrl", function ($scope, $timeout, 
         $scope.teamData = teamData;
         // console.log("teamJSON", $scope.teamData);
         var team = teamData.find(function (team) {
+            console.log($stateParams.teamId);
             return team.name === $stateParams.teamId;
         });
 

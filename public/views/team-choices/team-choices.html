@@ -1,10 +1,10 @@
 <h1 class="choose-a-team">Choose a Team.</h1>
 
 <!--Carousal-->
-<div class="carousel-wrapper">
+<div  class="carousel-wrapper" id="team-slider" bc-flickity="{{flickityOptions}}">
   
-  <!-- <div class="card" ng-repeat="teamData in teamData"><p>{{teamData.city}}</p><a ui-sref="team-roster({teamId: '{{teamData.name}}' })"><img ng-src="{{teamData.logo}}"><p>{{teamData.shortname}}</p></a></div> -->
-  <div class="card carousel-cell"><a ui-sref="team-roster({teamId: '{{teamData[0].name}}' })"><img ng-src="{{teamData[0].logo}}"><p>{{teamData[0].shortname}}</p></a></div>
+  <div class="card" ng-repeat="teamData in teamData"><p>{{teamData.city}}</p><a ui-sref="team-roster({teamId: '{{teamData.name}}' })"><img ng-src="{{teamData.logo}}"><p>{{teamData.shortname}}</p></a></div>
+  <!-- <div class="card carousel-cell"><a ui-sref="team-roster({teamId: '{{teamData[0].name}}' })"><img ng-src="{{teamData[0].logo}}"><p>{{teamData[0].shortname}}</p></a></div>
   <div class="card carousel-cell"><a ui-sref="team-roster({teamId: '{{teamData[1].name}}' })"><img ng-src="{{teamData[1].logo}}"><p>{{teamData[1].shortname}}</p></a></div>
   <div class="card carousel-cell"><a ui-sref="team-roster({teamId: '{{teamData[2].name}}' })"><img ng-src="{{teamData[2].logo}}"><p>{{teamData[2].shortname}}</p></a></div>
   <div class="card carousel-cell"><a ui-sref="team-roster({teamId: '{{teamData[3].name}}' })"><img ng-src="{{teamData[3].logo}}"><p>{{teamData[3].shortname}}</p></a></div>
@@ -33,7 +33,7 @@
   <div class="card carousel-cell"><a ui-sref="team-roster({teamId: '{{teamData[26].name}}' })"><img ng-src="{{teamData[26].logo}}"><p>{{teamData[26].shortname}}</p></a></div>
   <div class="card carousel-cell"><a ui-sref="team-roster({teamId: '{{teamData[27].name}}' })"><img ng-src="{{teamData[27].logo}}"><p>{{teamData[27].shortname}}</p></a></div>
   <div class="card carousel-cell"><a ui-sref="team-roster({teamId: '{{teamData[28].name}}' })"><img ng-src="{{teamData[28].logo}}"><p>{{teamData[28].shortname}}</p></a></div>
-  <div class="card carousel-cell"><a ui-sref="team-roster({teamId: '{{teamData[29].name}}' })"><img ng-src="{{teamData[29].logo}}"><p>{{teamData[29].shortname}}</p></a></div>
+  <div class="card carousel-cell"><a ui-sref="team-roster({teamId: '{{teamData[29].name}}' })"><img ng-src="{{teamData[29].logo}}"><p>{{teamData[29].shortname}}</p></a></div> -->
 
 
 </div>

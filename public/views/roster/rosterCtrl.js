@@ -58,6 +58,7 @@ angular.module("brawlApp").controller("rosterCtrl", function($scope, $timeout, m
             $scope.teamData = teamData;
             // console.log("teamJSON", $scope.teamData);
             var team = teamData.find(function(team){
+                console.log($stateParams.teamId)
                 return team.name === $stateParams.teamId;
             });
             

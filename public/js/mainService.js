@@ -3,8 +3,7 @@ angular.module("brawlApp").service("mainService", function($http){
     //                TEST
     this.test1 = "Service is working";
     // *********************************** 
-
-
+   
 // ****************************************
 //     this.getPlayers = function(){
 //         return $http ({
@@ -71,6 +70,7 @@ this.getDbData = function(id){
             method: 'GET',
             url:"../JSON/teams.json",
         }).then(function(response){
+            
             // console.log(response.data)
             return response.data
         })
