@@ -28,6 +28,11 @@ gulp.task('concat', function(){
   .pipe(gulp.dest('./public/dist'));
 });
 
+//BUILD IMAGES
+gulp.task('build-images', function(){
+  return gulp.src('images/**/*')
+      .pipe(gulp.dest('./dist/images'));
+})
 
 // Compile scss into css files
 gulp.task('sass', function() {
@@ -76,7 +81,8 @@ gulp.task('watch', function(){
         './public/views/team-choices/team-choices.css',
         './public/views/roster/roster.css',
         './public/views/fight/fight.css',
-        './public/views/results/results.css'
+        './public/views/results/results.css',
+        './public/images/**/*'
     ],
      ['sass']);
     
