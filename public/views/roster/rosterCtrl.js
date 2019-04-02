@@ -2,12 +2,10 @@ angular.module("brawlApp").controller("rosterCtrl", function($scope, $timeout, m
     // $scope.test1 = "RosterCTRL WORKING";
     // console.log("rosterCtrl");
     
-    $scope.leftPlayer = {};
-    $scope.rightPlayer = {};
+    // $scope.leftPlayer = {};
+    // $scope.rightPlayer = {};
 
-    // $scope.main.leftShow = true;
-    // $scope.main.leftShow = !$scope.leftShow;
-    
+
         
     mainService.getDbData(url).then(function(response){
         // console.log("Player Stats of Selected Team", response);
@@ -15,22 +13,48 @@ angular.module("brawlApp").controller("rosterCtrl", function($scope, $timeout, m
         // return response;
     });
 
+    $(".selectPlayer").addClass("animate-flicker");
+
+
+    function fadeEffect1 (){
+        $(".portrait-wrapper-1").stop(true,true).hide().fadeIn();
+    }
+    function fadeEffect2 (){
+        $(".portrait-wrapper-2").stop(true,true).hide().fadeIn();
+    }
+    
+    if($scope.main.leftPlayer && $scope.main.rightPlayer){
+        $(".roster-logo").show();
+    } else{
+        $(".roster-logo").hide();
+    }
+
     $scope.addPlayerLeft = function(player) {
        
         $scope.main.leftPlayer = player;
         console.log($scope.main.leftPlayer);
-        $(".selectPlayer").css("display", "none");
+        $(".player-portrait-1").children(".selectPlayer").css("display", "none");
+        fadeEffect1();
         $(".player-information-wrapper-left").css("display", "inline-block");
-       
+        if($scope.main.leftPlayer && $scope.main.rightplayer){
+            $(".roster-logo").show();
+        } else{
+            $(".roster-logo").hide();
+        }
     }
-
-
+    
     $scope.addPlayerRight = function(player) {
-      
+        
         $scope.main.rightPlayer = player;
         console.log($scope.main.rightPlayer);
-        $(".selectPlayer").css("display", "none");
+        $(".player-portrait-2").children(".selectPlayer").css("display", "none");
+        fadeEffect2();
         $(".player-information-wrapper-right").css("display", "inline-block");
+        if($scope.main.leftPlayer && $scope.main.rightPlayer){
+            $(".roster-logo").show();
+        } else{
+            $(".roster-logo").hide();
+        }
       
     }
 
@@ -71,13 +95,19 @@ angular.module("brawlApp").controller("rosterCtrl", function($scope, $timeout, m
             return team.name;
     });
    
-//On click, display player image.
-
-    // $scope.addPlayerRight = function(){
-        
-    //     return playerData;
-    // }
+    if($scope.main.leftPlayer){
+        console.log("BEFORE HIDE")
+        $(".player-portrait-1").children(".selectPlayer").hide();
+        $(".player-information-wrapper-left").show();
+    } else{
+        $(".player-information-wrapper-left").hide();
+    }
+    if($scope.main.rightPlayer){
+        $(".player-portrait-2").children(".selectPlayer").hide();
+        $(".player-information-wrapper-right").show();
+    } else{
+        $(".player-information-wrapper-right").hide();
+    }
     
-
 
 });

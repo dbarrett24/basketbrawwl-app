@@ -1,4 +1,8 @@
 angular.module("brawlApp").controller("player-headerCtrl", function($scope, mainService, $stateParams){
+ 
+
+
+   
     mainService.getTeams()
         .then(function(teamData){
             $scope.teamData = teamData;
@@ -14,5 +18,26 @@ angular.module("brawlApp").controller("player-headerCtrl", function($scope, main
             }
             return team.name;
     });
+
+
+    if($scope.main.leftPlayer){
+        console.log("BEFORE HIDE")
+        $(".player-portrait-1").children(".selectPlayer").hide();
+        $(".player-information-wrapper-left").show();
+    } else{
+        $(".player-information-wrapper-left").hide();
+    }
+    if($scope.main.rightPlayer){
+        $(".player-portrait-2").children(".selectPlayer").hide();
+        $(".player-information-wrapper-right").show();
+    } else{
+        $(".player-information-wrapper-right").hide();
+    }
+
+    if($scope.main.leftPlayer && $scope.main.rightPlayer){
+        $(".roster-logo").show();
+    } else{
+        $(".roster-logo").hide();
+    }
 
 });

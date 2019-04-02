@@ -246,6 +246,7 @@ angular.module("brawlApp").directive("table-head-dir", function () {
 "use strict";
 
 angular.module("brawlApp").controller("player-headerCtrl", function ($scope, mainService, $stateParams) {
+
     mainService.getTeams().then(function (teamData) {
         $scope.teamData = teamData;
         // console.log("teamJSON", $scope.teamData);
@@ -260,6 +261,26 @@ angular.module("brawlApp").controller("player-headerCtrl", function ($scope, mai
         }
         return team.name;
     });
+
+    if ($scope.main.leftPlayer) {
+        console.log("BEFORE HIDE");
+        $(".player-portrait-1").children(".selectPlayer").hide();
+        $(".player-information-wrapper-left").show();
+    } else {
+        $(".player-information-wrapper-left").hide();
+    }
+    if ($scope.main.rightPlayer) {
+        $(".player-portrait-2").children(".selectPlayer").hide();
+        $(".player-information-wrapper-right").show();
+    } else {
+        $(".player-information-wrapper-right").hide();
+    }
+
+    if ($scope.main.leftPlayer && $scope.main.rightPlayer) {
+        $(".roster-logo").show();
+    } else {
+        $(".roster-logo").hide();
+    }
 });
 "use strict";
 
@@ -296,26 +317,26 @@ angular.module("brawlApp").controller("team-choicesCtrl", function ($scope, main
         imagesLoaded: true,
         autoPlay: true,
         contain: true
+
+        // mainService.getTeams().then(function (teamData) {
+
+        //     $scope.teamData = teamData;
+        //     console.log($scope.teamData)
+
+        //     // Get the element that should hold the slider
+        //     var element = angular.element(document.getElementById('team-slider'));
+        //     console.log(element);
+
+        //     // NOTE: When fetching remote data, we initialize the Flickity
+        //     // instance inside of a $timeout. This ensures that the slides
+        //     // have already been assigned to scope before the slider is
+        //     // initialized.
+        //     $timeout(function () {
+        //         // Initialize our Flickity instance
+        //         FlickityService.create(element[0], element[0].id, $scope.flickityOptions);
+        //     });
+        // });
     };
-
-    // mainService.getTeams().then(function (teamData) {
-
-    //     $scope.teamData = teamData;
-    //     console.log($scope.teamData)
-
-    //     // Get the element that should hold the slider
-    //     var element = angular.element(document.getElementById('team-slider'));
-    //     console.log(element);
-
-    //     // NOTE: When fetching remote data, we initialize the Flickity
-    //     // instance inside of a $timeout. This ensures that the slides
-    //     // have already been assigned to scope before the slider is
-    //     // initialized.
-    //     $timeout(function () {
-    //         // Initialize our Flickity instance
-    //         FlickityService.create(element[0], element[0].id, $scope.flickityOptions);
-    //     });
-    // });
 });
 "use strict";
 
@@ -323,11 +344,8 @@ angular.module("brawlApp").controller("rosterCtrl", function ($scope, $timeout, 
     // $scope.test1 = "RosterCTRL WORKING";
     // console.log("rosterCtrl");
 
-    $scope.leftPlayer = {};
-    $scope.rightPlayer = {};
-
-    // $scope.main.leftShow = true;
-    // $scope.main.leftShow = !$scope.leftShow;
+    // $scope.leftPlayer = {};
+    // $scope.rightPlayer = {};
 
 
     mainService.getDbData(url).then(function (response) {
@@ -336,20 +354,47 @@ angular.module("brawlApp").controller("rosterCtrl", function ($scope, $timeout, 
         // return response;
     });
 
+    $(".selectPlayer").addClass("animate-flicker");
+
+    function fadeEffect1() {
+        $(".portrait-wrapper-1").stop(true, true).hide().fadeIn();
+    }
+    function fadeEffect2() {
+        $(".portrait-wrapper-2").stop(true, true).hide().fadeIn();
+    }
+
+    if ($scope.main.leftPlayer && $scope.main.rightPlayer) {
+        $(".roster-logo").show();
+    } else {
+        $(".roster-logo").hide();
+    }
+
     $scope.addPlayerLeft = function (player) {
 
         $scope.main.leftPlayer = player;
         console.log($scope.main.leftPlayer);
-        $(".selectPlayer").css("display", "none");
+        $(".player-portrait-1").children(".selectPlayer").css("display", "none");
+        fadeEffect1();
         $(".player-information-wrapper-left").css("display", "inline-block");
+        if ($scope.main.leftPlayer && $scope.main.rightplayer) {
+            $(".roster-logo").show();
+        } else {
+            $(".roster-logo").hide();
+        }
     };
 
     $scope.addPlayerRight = function (player) {
 
         $scope.main.rightPlayer = player;
         console.log($scope.main.rightPlayer);
-        $(".selectPlayer").css("display", "none");
+        $(".player-portrait-2").children(".selectPlayer").css("display", "none");
+        fadeEffect2();
         $(".player-information-wrapper-right").css("display", "inline-block");
+        if ($scope.main.leftPlayer && $scope.main.rightPlayer) {
+            $(".roster-logo").show();
+        } else {
+            $(".roster-logo").hide();
+        }
     };
 
     // *********************************************************
@@ -384,13 +429,19 @@ angular.module("brawlApp").controller("rosterCtrl", function ($scope, $timeout, 
         return team.name;
     });
 
-    //On click, display player image.
-
-    // $scope.addPlayerRight = function(){
-
-    //     return playerData;
-    // }
-
+    if ($scope.main.leftPlayer) {
+        console.log("BEFORE HIDE");
+        $(".player-portrait-1").children(".selectPlayer").hide();
+        $(".player-information-wrapper-left").show();
+    } else {
+        $(".player-information-wrapper-left").hide();
+    }
+    if ($scope.main.rightPlayer) {
+        $(".player-portrait-2").children(".selectPlayer").hide();
+        $(".player-information-wrapper-right").show();
+    } else {
+        $(".player-information-wrapper-right").hide();
+    }
 });
 "use strict";
 

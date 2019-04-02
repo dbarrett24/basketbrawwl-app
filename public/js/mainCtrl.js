@@ -32,6 +32,9 @@ angular.module("brawlApp").controller("mainCtrl", function($scope, mainService, 
                 FlickityService.create(element[0], element[0].id, $scope.flickityOptions);
             });
         });
+
+    
+
     
 
 });

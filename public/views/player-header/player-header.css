@@ -25,11 +25,49 @@
     right: 0;
     top: 0;
 }
+
+@keyframes flickerAnimation {
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+  }
+  @-o-keyframes flickerAnimation{
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+  }
+  @-moz-keyframes flickerAnimation{
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+  }
+  @-webkit-keyframes flickerAnimation{
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+  }
+
 .selectPlayer{
+    display: block;
     color: gray;
     font-family: "Roboto-Regular";
     font-size: 26px;
     position: absolute;
+}
+.animate-flicker{
+    -webkit-animation: flickerAnimation 1.75s infinite;
+    -moz-animation: flickerAnimation 1.75s infinite;
+    -o-animation: flickerAnimation 1.75s infinite;
+    animation: flickerAnimation 1.75s infinite;
+
+}
+.show{
+    opacity: 1 !important;
+    display: block !important;
+}
+.hide{
+    opacity: 0 !important;
+    display: none !important;
 }
 .player-information-wrapper-left{
     margin: 0 auto;
@@ -38,7 +76,6 @@
     position: fixed;
     left: 29%;
     float: left;
-    display: none;
 }
 .player-information-wrapper-right{
     margin: 0 auto;
@@ -47,7 +84,6 @@
     position: fixed;
     right: 29%;
     float: right;
-    display: none;
 }
 .playerName{
     color: gray;
@@ -119,17 +155,22 @@
     position: relative;
     
 }
+
+
 .player-portrait-1 img{
     height: 250px;
     position: relative;
     align-self: flex-end;
-    opacity: 0.9;
+    opacity: 1;
+    transition: opacity 0.5s;
 }
+
 .player-portrait-2 img{
     height: 250px;
     position: relative;
     align-self: flex-end;
-    opacity: 0.9;
+    opacity: 1;
+    transition: opacity 0.5s;
 }
 .team-logo-bg {
     clear: left;

@@ -21,6 +21,6 @@
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^3.1.0",
-    "massive": "^2.6.0"
+    "massive": "^2.7.5"
   }
 }
