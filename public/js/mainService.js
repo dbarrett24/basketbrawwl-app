@@ -84,7 +84,7 @@ this.getDbData = function(id){
 this.dbGetTeams = function(){
     return $http ({
             method: 'GET',
-            url:"http://localhost:3000/getLogo",
+            url:"http://localhost:8083/getLogo",
         }).then(function(response){
             // console.log(response.data)
             return response.data
