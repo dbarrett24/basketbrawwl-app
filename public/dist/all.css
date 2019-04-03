@@ -227,7 +227,7 @@ input:focus {
   width: 100%;
   position: absolute;
   bottom: -30px;
-  z-index: 5; }
+  z-index: 5 !important; }
 
 .headings-dir {
   position: absolute;
@@ -707,20 +707,82 @@ td {
   transition-delay: 0.01s;
   transition-duration: 0; }
 
-/*.fight-view{
-    width: 100%;
-    height: 100vh;
-    background-image: url("../../images/Background/black background.png");
-    background-size: cover;
-    
-}*/
+.fight-view {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../images/Background/black background.png");
+  background-size: cover; }
+
 .view-img {
   width: 75vw;
   height: 75vh; }
 
 .nav-dir2 {
   position: fixed;
-  width: 100%; }
+  width: 100%;
+  z-index: 5; }
+
+.fight-view-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: row; }
+
+.player-card-container-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100vh;
+  width: 50%;
+  background-color: blue;
+  opacity: 0.08; }
+
+.player-card-container-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100vh;
+  width: 50%;
+  background-color: red;
+  opacity: 0.08; }
+
+.player-card {
+  background-color: purple;
+  border-radius: 10px;
+  border: 7px white;
+  height: 625px;
+  width: 500px; }
+
+.vs-fight-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 49%;
+  bottom: 49%;
+  left: 49%;
+  right: 49%; }
+
+.fight-btn {
+  width: 150px;
+  border-radius: 25px;
+  background-color: #27AF81;
+  border: none;
+  padding: 14px 13px;
+  color: #fff;
+  font-family: "Roboto-Regular";
+  font-size: 20px; }
+
+.fight-btn:hover {
+  border-radius: 25px;
+  background-color: #089161;
+  border: none;
+  padding: 14px 13px;
+  color: #fff;
+  font-family: "Roboto-Regular";
+  transform: scale(1.025);
+  cursor: pointer; }
 
 /*.fight-view{
     width: 100%;
