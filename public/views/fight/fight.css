@@ -1,3 +1,6 @@
+button:focus{
+    outline: 0;
+}
 .fight-view{
     width: 100%;
     height: 100vh;
@@ -26,29 +29,30 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    flex-direction: column;
+    flex-direction: row;
     height: 100vh;
     width: 50%;
-    background-color: blue;
-    opacity: 0.08;
+    z-index: 1;
 }
 .player-card-container-right{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    flex-direction: column;
+    flex-direction: row;
     height: 100vh;
     width: 50%;
-    background-color: red;
-    opacity: 0.08;
+    z-index: 1;
 }
 
 .player-card{
-    background-color: purple;
-    border-radius: 10px;
-    border: 7px white;
+    position: relative;
+    background-color: #727272;
+    border: 7px solid white;
     height: 625px;
     width: 500px;
+    border-radius: 28px;
+    box-shadow: 0px 10px 50px 0px rgba(0,0,0,1);
+    overflow: hidden;
 }
 
 .vs-fight-container{
@@ -56,29 +60,256 @@
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 49%;
+    top: 40%;
     bottom: 49%;
     left: 49%;
     right: 49%;
+    z-index: 1;
 }
 
 .fight-btn{
-    width: 150px;
-    border-radius: 25px;
-    background-color: #27AF81;
+    width: 180px;
+    border-radius: 50px;
+    background-color: #f7ad45;
     border: none;
     padding: 14px 13px;
     color: #fff;
     font-family: "Roboto-Regular";
-    font-size: 20px;
+    font-size: 36px;
 }
 .fight-btn:hover{
-    border-radius: 25px;
-    background-color: #089161;
+    border-radius: 50px;
+    background-color: #FF9800;
+    border: none;
+    padding: 14px 13px;
+    color: #000;
+    font-family: "ALL-AGES";
+    transform: scale(2.025px);
+    cursor: pointer;
+    font-size: 36px;
+    animation: shake 0.5s; 
+    animation-iteration-count: infinite; 
+}
+.play-again-btn{
+    width: 167px;
+    border-radius: 50px;
+    background-color: #f7ad45;
     border: none;
     padding: 14px 13px;
     color: #fff;
     font-family: "Roboto-Regular";
-    transform: scale(1.025);
+    font-size: 22px;
+    display: none;
+}
+.play-again-btn:hover{
+    border-radius: 50px;
+    background-color: #FF9800;
+    border: none;
+    padding: 14px 13px;
+    color: #000;
+    font-family: "ALL-AGES";
+    transform: scale(2.025px);
     cursor: pointer;
+    font-size: 22px;
+    animation: shake 0.5s; 
+    animation-iteration-count: infinite; 
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+.fight-font{
+    font-family: "ALL-AGES";
+    color: black;
+}
+
+.transparency-wrapper{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.08;
+}
+
+.blue-side{
+    height: 100vh;
+    width: 50%;
+    background-color: blue;
+    overflow: hidden;
+
+}
+.blue-side img{
+    height: 1000px;
+    float: left;
+    position: relative;
+    top: -10%;
+    left: -30%;
+    opacity: 0.6;
+}
+
+.red-side{
+    height: 100vh;
+    width: 50%;
+    background-color: red;
+    overflow: hidden;
+}
+
+.red-side img{
+    height: 1000px;
+    float: right;
+    position: relative;
+    opacity: 0.6;
+    top: -10%;
+    left: 30%;
+}
+
+.name-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    position: absolute;
+    bottom: 81px;
+    height: 22%;
+    width: 100%;
+    left: 0;
+    z-index: 2;
+    transform: skewY(-2.2deg);
+    border-top: 10px solid black;
+    border-bottom: 7px solid black;
+}
+
+.player-name{
+    font-size: 52px;
+}
+
+.vs{
+    font-size: 150px;
+    padding-bottom: 75px;
+    color: white;
+}
+.vs-small{
+    font-size: 81px;
+    transition: all 0.75s;
+}
+
+.result-card-left{
+    transform: scale(0.9) translateX(-30%);
+    transition: all 1s;
+}
+.result-card-right{
+    transform: scale(0.9) translateX(30%);
+    transition: all 1s;
+}
+
+.result-stats-wrapper-left{
+    width: 200px;
+    height: 364px;
+    position: absolute;
+    /* top: 23.5%; */
+    right: 1194px;
+    transition: left 1s;
+    background: white;
+    border-radius: 28px;
+    box-shadow: 0px 10px 50px 0px rgba(0,0,0,1);
+    font-family: "Roboto-Regular";
+    font-size: 16px;
+    z-index: -1;
+    padding: 12px 0px 12px 0px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.result-stats-wrapper-right{
+    width: 200px;
+    height: 364px;
+    position: absolute;
+    /* top: 23.5%; */
+    left: 1194px;
+    transition: right 1s;
+    background: white;
+    border-radius: 28px;
+    box-shadow: 0px 10px 50px 0px rgba(0,0,0,1);
+    font-family: "Roboto-Regular";
+    font-size: 16px;
+    z-index: -1;
+    padding: 12px 0px 12px 0px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.slide-out-left{
+    right: 1122px;
+    opacity: 1;
+    transition: all 1s;
+}
+.slide-out-right{
+    left: 1122px;
+    opacity: 1;
+    transition: all 1s;
+}
+
+.stat-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px;
+    height: 25px;
+    width: 100%;
+    background-color: #E4E2E2;
+    margin: 3px;
+    padding-right: 17px;
+}
+.stat-wrap:hover{
+    background-color:lightgray
+}
+
+.game-stats{
+    padding: 3px 0px 2px 0px;
+    text-align: center;
+    font-size: 19px;
+}
+
+hr{
+    margin: 5px 0 0 0;
+}
+.game-result-left{
+    position: absolute;
+    top: 86px;
+    left: 11%;
+    font-family: "ALL-AGES";
+    font-size: 130px;
+    color: white;
+    opacity: 0;
+    transform: rotate(-9deg);
+}
+
+.game-result-right{
+    position: absolute;
+    top: 86px;
+    right: 11%;
+    font-family: "ALL-AGES";
+    font-size: 130px;
+    color: white;
+    opacity: 0;
+    transform: rotate(9deg);
+}
+
+.fadeIn{
+    opacity: 1;
+    transition: all 2s;
 }
