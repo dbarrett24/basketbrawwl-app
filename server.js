@@ -7,7 +7,7 @@ var app = module.exports = express();
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static('./public'));
-app.use('/scripts', express.static(__dirname + '/node_modules/'));
+app.use('/', express.static(__dirname + '/node_modules/'));
 
 var config = require('./config.js');
 var db = massive.connectSync({connectionString : config.elephantSQL});
