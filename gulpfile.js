@@ -30,7 +30,7 @@ function buildCSS(){
     .pipe(sourcemaps.init()) //pipe (take the results from the previous thing and do something). PIPE results to sourcemaps.init() function.
     .pipe(sass()) //process SASS. Turn sass into CSS.
     .pipe(cachebust.resources()) //Keep a copy of something and don't get the new thing. Blow up the old stuff, put in the new stuff!
-    .pipe(concat('styles.css')) //put all the sass files into ONE long file. Makes things faster
+    .pipe(concat('all.css')) //put all the sass files into ONE long file. Makes things faster
     .pipe(sourcemaps.write('./maps')) //write out sourcemaps
     .pipe(gulp.dest('./dist')); //stick the sourcemaps into the dist folder.
 }
@@ -53,24 +53,23 @@ function buildJS() {
       './public/views/team-choices/team-choicesCtrl.js',
       './public/views/roster/rosterCtrl.js',
       './public/views/fight/fightCtrl.js'
-      // './public/views/results/fightCtrl.js'
       ])              
     .pipe(sourcemaps.init())
     // .pipe(print())                        
     .pipe(babel({ presets: ['@babel/preset-env'] }))
-    .pipe(concat('bundle.js'))
+    .pipe(concat('all.js'))
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist/js'));
 }
 
 //npm install --save gulp-babel gulp-print babel-preset-es2015
-// function buildViews(){
-//     console.log("Gulp: Rebuilding HTML with your changes");
-//     return gulp.src('views/**/*.html')
-//     .pipe(gulp.dest('./dist/views'));
+function buildViews(){
+    console.log("Gulp: Rebuilding HTML with your changes");
+    return gulp.src('views/**/*.html')
+    .pipe(gulp.dest('./dist/views'));
     
-// }
+}
 // function buildImages(){
 //     console.log("Gulp: Rebuilding Images with your changes");
 //     return gulp.src('images/**/*')
@@ -89,7 +88,7 @@ function buildJS() {
 // };
 
 function watch() {
-    // gulp.watch(['./index.html','./views/**/*.html'], buildViews);
+    gulp.watch(['./index.html','./views/**/*.html'], buildViews);
     gulp.watch([
       './public/css/reset.css', 
       './public/css/style.scss', 
@@ -124,4 +123,4 @@ function watch() {
 
 // gulp.task(series(build, watch));
 
-gulp.task('default', gulp.series(buildCSS, buildJS, watch));
+gulp.task('default', gulp.series(buildViews, buildCSS, buildJS, watch));
