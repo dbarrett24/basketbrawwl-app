@@ -1,10 +1,9 @@
 var express = require('express');
-var bodyParser = require('body-parser');
 var cors = require('cors');
 var massive = require('massive');
 
 var app = module.exports = express();
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(cors());
 app.use(express.static('./public'));
 app.use('/scripts', express.static(__dirname + '/node_modules/'));
