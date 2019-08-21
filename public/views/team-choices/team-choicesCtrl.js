@@ -1,4 +1,4 @@
-angular.module("brawlApp").controller("team-choicesCtrl", function ($scope, mainService, $stateParams, $document, $timeout, FlickityService) {
+angular.module("brawlApp").controller("team-choicesCtrl", ['$scope','mainService','$stateParams','$document', '$timeout', 'FlickityService', function ($scope, mainService, $stateParams, $document, $timeout, FlickityService) {
     $(document).ready(function () {
         $('.player-header-1').css('position', 'relative');
         // $('.carousel-wrapper').slick({
@@ -54,4 +54,4 @@ angular.module("brawlApp").controller("team-choicesCtrl", function ($scope, main
     //         FlickityService.create(element[0], element[0].id, $scope.flickityOptions);
     //     });
     // });
-});
+}]);

@@ -1,4 +1,4 @@
-angular.module("brawlApp").controller("rosterCtrl", function($scope, $timeout, mainService, $stateParams){
+angular.module("brawlApp").controller("rosterCtrl", ['$scope', '$timeout', 'mainService','$stateParams', function($scope, $timeout, mainService, $stateParams){
     // $scope.test1 = "RosterCTRL WORKING";
     // console.log("rosterCtrl");
     
@@ -110,4 +110,4 @@ angular.module("brawlApp").controller("rosterCtrl", function($scope, $timeout, m
     }
     
 
-});
+}]);

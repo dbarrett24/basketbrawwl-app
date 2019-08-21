@@ -1,4 +1,4 @@
-angular.module("brawlApp").controller("fightCtrl", function($scope, mainService, $stateParams){
+angular.module("brawlApp").controller("fightCtrl", ['$scope','mainService','$stateParams', function($scope, mainService, $stateParams){
     $scope.leftPlyrImgState = $scope.main.leftPlayer.restimg;
     $scope.rightPlyrImgState = $scope.main.rightPlayer.restimg;
     $scope.leftGameResult = "";
@@ -193,4 +193,4 @@ angular.module("brawlApp").controller("fightCtrl", function($scope, mainService,
 
 
 
-});
+}]);

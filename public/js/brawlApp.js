@@ -1,5 +1,5 @@
 angular.module("brawlApp", ['ui.router', 'ngAnimate', 'bc.Flickity'])
-    .config(function($stateProvider, $urlRouterProvider){
+    .config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlRouterProvider){
         // var mainState = {
         //     name: 'main',
         //     views: {
@@ -97,4 +97,4 @@ angular.module("brawlApp", ['ui.router', 'ngAnimate', 'bc.Flickity'])
 
         $urlRouterProvider
             .otherwise('/');
-    })
+    }])

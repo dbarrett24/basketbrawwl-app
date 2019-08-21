@@ -1,4 +1,4 @@
-angular.module("brawlApp").service("mainService", function($http){
+angular.module("brawlApp").service("mainService", ['$http', function($http){
     // *********************************** 
     //                TEST
     this.test1 = "Service is working";
@@ -91,4 +91,4 @@ this.dbGetTeams = function(){
         })
     }
 
-});
+}]);

@@ -1,4 +1,4 @@
-angular.module("brawlApp").controller("player-headerCtrl", function($scope, mainService, $stateParams){
+angular.module("brawlApp").controller("player-headerCtrl", ['$scope','mainService','$stateParams', function($scope, mainService, $stateParams){
  
 
 
@@ -40,4 +40,4 @@ angular.module("brawlApp").controller("player-headerCtrl", function($scope, main
         $(".roster-logo").hide();
     }
 
-});
+}]);
