@@ -11,6 +11,9 @@ app.use(cors());
 app.use(express.static(__dirname + '/dist'));
 app.use(express.static(__dirname + '/public'));
 app.use('/scripts', express.static(__dirname + '/node_modules/'));
+app.use(angularFlickity());
+app.use(flickity());
+app.use(flickityImagesLoaded());
 
 var config = require('./config.js');
 var db = massive.connectSync({connectionString : config.elephantSQL});
