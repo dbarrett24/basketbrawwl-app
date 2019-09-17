@@ -1,6 +1,9 @@
 var express = require('express');
 var cors = require('cors');
 var massive = require('massive');
+var angularFlickity = require('angular-flickity');
+var flickity = require('flickity');
+var flickityImagesLoaded = require('flickity-imagesloaded');
 
 var app = module.exports = express();
 app.use(express.json());
