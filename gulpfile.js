@@ -6,7 +6,7 @@ var gulp = require('gulp')
 ,   babel = require('gulp-babel')
 ,   concat = require('gulp-concat')
 ,   CacheBuster = require('gulp-cachebust') //capitalized because it is a constructor function
-,   print = require('gulp-print')
+,   print = require('gulp-print').default
 ,   uglify = require('gulp-uglify')
 
 var cachebust = new CacheBuster();  //need this constructor function
@@ -52,40 +52,41 @@ function buildJS() {
       './public/views/player-header/player-headerCtrl.js',
       './public/views/team-choices/team-choicesCtrl.js',
       './public/views/roster/rosterCtrl.js',
-      './public/views/fight/fightCtrl.js'
+      './public/views/fight/fightCtrl.js',
+      './public/js/libraries/angular-animate.min.js'
       ])              
-    .pipe(sourcemaps.init())
-    // .pipe(print())                        
     .pipe(babel({ presets: ['@babel/preset-env'] }))
+    .pipe(sourcemaps.init())
+    .pipe(print())                        
     .pipe(concat('all.js'))
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist/js'));
-}
-
-//npm install --save gulp-babel gulp-print babel-preset-es2015
-function buildViews(){
+  }
+  
+  function buildViews(){
     console.log("Gulp: Rebuilding HTML with your changes");
-    return gulp.src('views/**/*.html')
+    return gulp.src('./public/**/**/*.html')
     .pipe(gulp.dest('./dist/views'));
     
-}
-// function buildImages(){
-//     console.log("Gulp: Rebuilding Images with your changes");
-//     return gulp.src('images/**/*')
-//     .pipe(gulp.dest('./dist/images'));
-// }
-// function buildJSON(){
-//     console.log("Gulp: Rebuilding JSON with your changes");
-//     return gulp.src('JSON/*.json')
-//     .pipe(gulp.dest('./dist/JSON'));
-// }
+  }
 
-// function build() {
-//     return gulp.src('index.html')
-//     .pipe(cachebust.references())
-//     .pipe(gulp.dest('dist'));
-// };
+  function buildImages(){
+        console.log("Gulp: Rebuilding Images with your changes");
+        return gulp.src('images/**/*')
+        .pipe(gulp.dest('./dist/images'));
+  }
+  function buildJSON(){
+        console.log("Gulp: Rebuilding JSON with your changes");
+        return gulp.src('JSON/*.json')
+        .pipe(gulp.dest('./dist/JSON'));
+  }
+      
+  function build() {
+    return gulp.src('./index.html')
+    .pipe(cachebust.references())
+    .pipe(gulp.dest('./dist'));
+  };
 
 function watch() {
     gulp.watch(['./index.html','./views/**/*.html'], buildViews);
@@ -116,11 +117,11 @@ function watch() {
        './public/views/fight/fightCtrl.js',
        './public/views/results/fightCtrl.js'
   ], buildJS);
-    // gulp.watch('./images/**/*', buildImages);
-    // gulp.watch('./JSON/*.json', buildJSON);
+    gulp.watch('./images/**/*', buildImages);
+    gulp.watch('./JSON/*.json', buildJSON);
     // gulp.watch('download/**/*', buildDL);
 };
 
 // gulp.task(series(build, watch));
 
-gulp.task('default', gulp.series(buildViews, buildCSS, buildJS, watch));
+gulp.task('default', gulp.series(buildViews, buildCSS, buildJS, buildImages, buildJSON, build, watch));

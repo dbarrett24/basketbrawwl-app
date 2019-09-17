@@ -1,0 +1,8 @@
+<h1 class="choose-a-team">Choose a Team.</h1>
+
+<!--Carousal-->
+<div  class="carousel-wrapper" id="team-slider">
+  
+  <div class="card carousel-cell" ng-repeat="teamData in teamData"><p>{{teamData.city}}</p><a ui-sref="team-roster({teamId: '{{teamData.name}}' })"><img ng-src="{{teamData.logo}}"><p>{{teamData.shortname}}</p></a></div>
+
+</div>
