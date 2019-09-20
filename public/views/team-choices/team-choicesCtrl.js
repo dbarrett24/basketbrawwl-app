@@ -22,17 +22,17 @@ angular.module("brawlApp").controller("team-choicesCtrl", ['$scope','mainService
         });
 
     });
-    $scope.flickityOptions = {
-        // options
-        cellSelector: '.carousel-cell',
-        cellAlign: 'left',
-        pageDots: false,
-        // groupCells: 3,
-        adaptiveHeight: false,
-        imagesLoaded: true,
-        autoPlay: true,
-        contain: true
-    }
+    // $scope.flickityOptions = {
+    //     // options
+    //     cellSelector: '.carousel-cell',
+    //     cellAlign: 'left',
+    //     pageDots: false,
+    //     // groupCells: 3,
+    //     adaptiveHeight: false,
+    //     imagesLoaded: true,
+    //     autoPlay: true,
+    //     contain: true
+    // }
 
 
 
