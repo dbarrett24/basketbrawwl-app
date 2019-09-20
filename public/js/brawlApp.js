@@ -1,4 +1,4 @@
-angular.module("brawlApp", ['ui.router', 'ngAnimate', 'bc.Flickity'])
+angular.module("brawlApp", ['ui.router', 'ngAnimate'])
     .config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlRouterProvider){
         // var mainState = {
         //     name: 'main',

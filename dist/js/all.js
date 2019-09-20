@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("brawlApp", ['ui.router', 'ngAnimate', 'bc.Flickity']).config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+angular.module("brawlApp", ['ui.router', 'ngAnimate']).config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
   // var mainState = {
   //     name: 'main',
   //     views: {
@@ -88,7 +88,7 @@ angular.module("brawlApp", ['ui.router', 'ngAnimate', 'bc.Flickity']).config(['$
 }]);
 "use strict";
 
-angular.module("brawlApp").controller("mainCtrl", ['$scope', 'mainService', 'FlickityService', '$timeout', function ($scope, mainService, FlickityService, $timeout) {
+angular.module("brawlApp").controller("mainCtrl", ['$scope', 'mainService', '$timeout', function ($scope, mainService, $timeout) {
   // ***********************************   
   //                TEST 
   $scope.test = "Controller is working";
@@ -107,11 +107,10 @@ angular.module("brawlApp").controller("mainCtrl", ['$scope', 'mainService', 'Fli
     // instance inside of a $timeout. This ensures that the slides
     // have already been assigned to scope before the slider is
     // initialized.
-
-    $timeout(function () {
-      // Initialize our Flickity instance
-      FlickityService.create(element[0], element[0].id, $scope.flickityOptions);
-    });
+    // $timeout(function () {
+    //     // Initialize our Flickity instance
+    //     FlickityService.create(element[0], element[0].id, $scope.flickityOptions);
+    // });
   });
 }]);
 "use strict";
@@ -264,7 +263,7 @@ angular.module("brawlApp").controller("player-headerCtrl", ['$scope', 'mainServi
 }]);
 "use strict";
 
-angular.module("brawlApp").controller("team-choicesCtrl", ['$scope', 'mainService', '$stateParams', '$document', '$timeout', 'FlickityService', function ($scope, mainService, $stateParams, $document, $timeout, FlickityService) {
+angular.module("brawlApp").controller("team-choicesCtrl", ['$scope', 'mainService', '$stateParams', '$document', '$timeout', function ($scope, mainService, $stateParams, $document, $timeout) {
   $(document).ready(function () {
     $('.player-header-1').css('position', 'relative'); // $('.carousel-wrapper').slick({
     //     infinite: true,

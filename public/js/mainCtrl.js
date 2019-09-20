@@ -1,4 +1,4 @@
-angular.module("brawlApp").controller("mainCtrl", ['$scope', 'mainService', 'FlickityService', '$timeout',function($scope, mainService, FlickityService, $timeout){
+angular.module("brawlApp").controller("mainCtrl", ['$scope', 'mainService', '$timeout',function($scope, mainService, $timeout){
 // ***********************************   
 //                TEST 
     $scope.test = "Controller is working";
@@ -27,10 +27,10 @@ angular.module("brawlApp").controller("mainCtrl", ['$scope', 'mainService', 'Fli
             // instance inside of a $timeout. This ensures that the slides
             // have already been assigned to scope before the slider is
             // initialized.
-            $timeout(function () {
-                // Initialize our Flickity instance
-                FlickityService.create(element[0], element[0].id, $scope.flickityOptions);
-            });
+            // $timeout(function () {
+            //     // Initialize our Flickity instance
+            //     FlickityService.create(element[0], element[0].id, $scope.flickityOptions);
+            // });
         });
 
     
