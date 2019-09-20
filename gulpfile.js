@@ -68,7 +68,6 @@ function buildJS() {
     console.log("Gulp: Rebuilding HTML with your changes");
     return gulp.src('./public/**/**/*.html')
     .pipe(gulp.dest('./dist/views'));
-    
   }
   
   function buildImages(){
