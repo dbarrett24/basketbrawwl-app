@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static(__dirname + '/dist'));
 app.use(express.static(__dirname + '/public'));
-app.use(express.static(__dirname + '/node_modules/'));
+app.use('/static/', express.static(__dirname + '/node_modules/'));
 
 
 var config = require('./config.js');

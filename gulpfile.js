@@ -54,7 +54,7 @@ function buildJS() {
       './public/views/roster/rosterCtrl.js',
       './public/views/fight/fightCtrl.js',
       './public/js/libraries/angular-animate.min.js'
-      ])              
+    ])              
     .pipe(babel({ presets: ['@babel/preset-env'] }))
     .pipe(sourcemaps.init())
     .pipe(print())                        
@@ -70,30 +70,30 @@ function buildJS() {
     .pipe(gulp.dest('./dist/views'));
     
   }
-
+  
   function buildImages(){
-        console.log("Gulp: Rebuilding Images with your changes");
-        return gulp.src('images/**/*')
-        .pipe(gulp.dest('./dist/images'));
+    console.log("Gulp: Rebuilding Images with your changes");
+    return gulp.src('images/**/*')
+    .pipe(gulp.dest('./dist/images'));
   }
   function buildFonts(){
-        console.log("Gulp: Rebuilding fonts with your changes");
-        return gulp.src('fonts/**/*')
-        .pipe(gulp.dest('./dist/fonts'));
+    console.log("Gulp: Rebuilding fonts with your changes");
+    return gulp.src('fonts/**/*')
+    .pipe(gulp.dest('./dist/fonts'));
   }
   function buildJSON(){
-        console.log("Gulp: Rebuilding JSON with your changes");
-        return gulp.src('JSON/*.json')
-        .pipe(gulp.dest('./dist/JSON'));
+    console.log("Gulp: Rebuilding JSON with your changes");
+    return gulp.src('JSON/*.json')
+    .pipe(gulp.dest('./dist/JSON'));
   }
-      
+  
   function build() {
     return gulp.src('./index.html')
     .pipe(cachebust.references())
     .pipe(gulp.dest('./dist'));
   };
-
-function watch() {
+  
+  function watch() {
     gulp.watch(['./index.html','./views/**/*.html'], buildViews);
     gulp.watch([
       './public/css/reset.css', 
@@ -108,7 +108,7 @@ function watch() {
       './public/views/fight/fight.css',
       './public/views/results/results.css',
       './public/images/**/*'
-  ], buildCSS);
+    ], buildCSS);
     gulp.watch([
       './public/js/brawlApp.js',
       './public/js/mainCtrl.js',
@@ -117,10 +117,11 @@ function watch() {
       './public/directives/nav/navDir.js',
       './public/directives/table-head-dir/table-head-dir.js',
       './public/views/player-header/player-headerCtrl.js',
-       './public/views/team-choices/team-choicesCtrl.js',
+      './public/views/team-choices/team-choicesCtrl.js',
       './public/views/roster/rosterCtrl.js',
-       './public/views/fight/fightCtrl.js',
-       './public/views/results/fightCtrl.js'
+      './public/views/fight/fightCtrl.js',
+      './public/views/results/fightCtrl.js',
+      './public/js/libraries/angular-animate.min.js'
   ], buildJS);
     gulp.watch('./images/**/*', buildImages);
     gulp.watch('./fonts/**/*', buildFonts);
