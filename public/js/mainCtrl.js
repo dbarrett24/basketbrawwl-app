@@ -1,4 +1,4 @@
-angular.module("brawlApp").controller("mainCtrl", ['$scope', 'mainService', '$timeout',function($scope, mainService, $timeout){
+angular.module("brawlApp").controller("mainCtrl", ['$scope', 'mainService',function($scope, mainService){
 // ***********************************   
 //                TEST 
     $scope.test = "Controller is working";
