@@ -76,6 +76,11 @@ function buildJS() {
         return gulp.src('images/**/*')
         .pipe(gulp.dest('./dist/images'));
   }
+  function buildFonts(){
+        console.log("Gulp: Rebuilding fonts with your changes");
+        return gulp.src('fonts/**/*')
+        .pipe(gulp.dest('./dist/fonts'));
+  }
   function buildJSON(){
         console.log("Gulp: Rebuilding JSON with your changes");
         return gulp.src('JSON/*.json')
@@ -118,10 +123,11 @@ function watch() {
        './public/views/results/fightCtrl.js'
   ], buildJS);
     gulp.watch('./images/**/*', buildImages);
+    gulp.watch('./fonts/**/*', buildFonts);
     gulp.watch('./JSON/*.json', buildJSON);
     // gulp.watch('download/**/*', buildDL);
 };
 
 // gulp.task(series(build, watch));
 
-gulp.task('default', gulp.series(buildViews, buildCSS, buildJS, buildImages, buildJSON, build, watch));
+gulp.task('default', gulp.series(buildViews, buildCSS, buildJS, buildImages, buildFonts, buildJSON, build, watch));

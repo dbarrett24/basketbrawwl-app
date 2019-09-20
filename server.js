@@ -1,19 +1,14 @@
 var express = require('express');
 var cors = require('cors');
 var massive = require('massive');
-var angularFlickity = require('angular-flickity');
-var flickity = require('flickity');
-var flickityImagesLoaded = require('flickity-imagesloaded');
 
 var app = module.exports = express();
 app.use(express.json());
 app.use(cors());
 app.use(express.static(__dirname + '/dist'));
 app.use(express.static(__dirname + '/public'));
-app.use('/scripts', express.static(__dirname + '/node_modules/'));
-app.use(angularFlickity());
-app.use(flickity());
-app.use(flickityImagesLoaded());
+app.use(express.static(__dirname + '/node_modules/'));
+
 
 var config = require('./config.js');
 var db = massive.connectSync({connectionString : config.elephantSQL});

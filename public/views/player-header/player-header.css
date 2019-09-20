@@ -14,7 +14,7 @@
 .player-header-1{
     width: 100%;
     height: 30vh;
-    background: url("../../images/Background/black background.png");
+    background: url("./images/Background/black background.png");
     position: fixed;
     z-index: 1;
 }

@@ -1,17 +1,16 @@
-@font-face { font-family: 'Flama-Basic'; src: url('../fonts/Flama-Basic.otf') } 
-@font-face { font-family: 'ALL-AGES'; src: url('../fonts/AllAgesDEMO.ttf') format("truetype")} 
-@font-face { font-family: 'Roboto-Regular'; src: url('../fonts/Roboto-Regular.ttf') format("truetype") } 
+@font-face { font-family: 'Flama-Basic'; src: url('./fonts/Flama-Basic.otf') } 
+@font-face { font-family: 'ALL-AGES'; src: url('./fonts/AllAgesDEMO.ttf') format("truetype")} 
+@font-face { font-family: 'Roboto-Regular'; src: url('./fonts/Roboto-Regular.ttf') format("truetype") } 
 @font-face {
     font-family: 'nexa_rust_slabblack_shadow_01';
-    src: url('../fonts/NexaRustSlab-BlackShadow01-Free-webfont.eot');
-    src: url('../fonts/NexaRustSlab-BlackShadow01-Free-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/NexaRustSlab-BlackShadow01-Free-webfont.woff2') format('woff2'),
-         url('../fonts/NexaRustSlab-BlackShadow01-Free-webfont.woff') format('woff'),
-         url('../fonts/NexaRustSlab-BlackShadow01-Free-webfont.ttf') format('truetype'),
-         url('../fonts/NexaRustSlab-BlackShadow01-Free-webfont.svg#nexa_rust_slabblack_shadow_01') format('svg');
+    src: url('./fonts/NexaRustSlab-BlackShadow01-Free-webfont.eot');
+    src: url('./fonts/NexaRustSlab-BlackShadow01-Free-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/NexaRustSlab-BlackShadow01-Free-webfont.woff2') format('woff2'),
+         url('./fonts/NexaRustSlab-BlackShadow01-Free-webfont.woff') format('woff'),
+         url('./fonts/NexaRustSlab-BlackShadow01-Free-webfont.ttf') format('truetype'),
+         url('./fonts/NexaRustSlab-BlackShadow01-Free-webfont.svg#nexa_rust_slabblack_shadow_01') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
-
 
