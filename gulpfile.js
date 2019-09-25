@@ -72,6 +72,7 @@ function buildJS() {
       './public/directives/nav/navDir.html',
       './public/directives/table-head-dir/table-head-dir.html',
       './public/views/player-header/player-header.html',
+      './public/views/home-header/home-header.html',
       './public/views/team-choices/team-choices.html',
       './public/views/roster/roster.html',
       './public/views/fight/fight.html',
