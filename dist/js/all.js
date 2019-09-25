@@ -186,7 +186,7 @@ angular.module("brawlApp").service("mainService", ['$http', function ($http) {
   this.getTeams = function () {
     return $http({
       method: 'GET',
-      url: "../JSON/teams.json"
+      url: "/JSON/teams.json"
     }).then(function (response) {
       // console.log(response.data)
       return response.data;

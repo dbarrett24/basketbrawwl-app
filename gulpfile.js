@@ -82,17 +82,17 @@ function buildJS() {
   
   function buildImages(){
     console.log("Gulp: Rebuilding Images with your changes");
-    return gulp.src('images/**/*')
+    return gulp.src('./public/images/**/*')
     .pipe(gulp.dest('./dist/images'));
   }
   function buildFonts(){
     console.log("Gulp: Rebuilding fonts with your changes");
-    return gulp.src('fonts/**/*')
+    return gulp.src('./public/fonts/**/*')
     .pipe(gulp.dest('./dist/fonts'));
   }
   function buildJSON(){
     console.log("Gulp: Rebuilding JSON with your changes");
-    return gulp.src('JSON/*.json')
+    return gulp.src('./public/JSON/*.json')
     .pipe(gulp.dest('./dist/JSON'));
   }
   

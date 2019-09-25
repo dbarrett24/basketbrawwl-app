@@ -1,0 +1,213 @@
+[
+  {
+    "name": "Atlanta Hawks",
+    "shortname": "Hawks",
+    "city": "Atlanta",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/hawks.svg",
+    "slug": "nba-atl"
+  },
+  {
+    "name": "Philadelphia 76ers",
+    "shortname": "76ers",
+    "city": "Philadelphia",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/sixers.svg",
+    "slug": "nba-phi"
+  },
+  {
+    "name": "Milwaukee Bucks",
+    "shortname": "Bucks",
+    "city": "Milwaukee",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/bucks.svg",
+    "slug": "nba-mil"
+  },
+  {
+    "name": "Chicago Bulls",
+    "shortname": "Bulls",
+    "city": "Chicago",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/bulls.svg",
+    "slug": "nba-chi"
+  },
+  {
+    "name": "Cleveland Cavaliers",
+    "shortname": "Cavaliers",
+    "city": "Cleveland",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/cavs.svg",
+    "slug": "nba-cle"
+  },
+  {
+    "name": "Boston Celtics",
+    "shortname": "Celtics",
+    "city": "Boston",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/celtics.svg",
+    "slug": "nba-bos"
+  },
+  {
+    "name": "LA Clippers",
+    "shortname": "Clippers",
+    "city": "Los Angeles",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/clippers.svg",
+    "slug": "nba-lac"
+  },
+  {
+    "name": "Memphis Grizzlies",
+    "shortname": "Grizzlies",
+    "city": "Memphis",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/grizzlies.svg",
+    "slug": "nba-mem"
+  },
+  {
+    "name": "Miami Heat",
+    "shortname": "Heat",
+    "city": "Miami",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/heat.svg",
+    "slug": "nba-mia"
+  },
+  {
+    "name": "Charlotte Hornets",
+    "shortname": "Hornets",
+    "city": "Charlotte",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/hornets.svg",
+    "slug": "nba-cha"
+  },
+  {
+    "name": "Utah Jazz",
+    "shortname": "Jazz",
+    "city": "Utah",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/jazz.svg",
+    "slug": "nba-uta"
+  },
+  {
+    "name": "Sacramento Kings",
+    "shortname": "Kings",
+    "city": "Sacramento",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/kings.svg",
+    "slug": "nba-sac"
+  },
+  {
+    "name": "New York Knicks",
+    "shortname": "Knicks",
+    "city": "Knicks",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/knicks.svg",
+    "slug": "nba-ny"
+  },
+  {
+    "name": "Los Angeles Lakers",
+    "shortname": "Lakers",
+    "city": "Los Angeles",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/lakers.svg",
+    "slug": "nba-lal"
+  },
+  {
+    "name": "Orlando Magic",
+    "shortname": "Magic",
+    "city": "Orlando",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/magic.svg",
+    "slug": "nba-orl"
+  },
+  {
+    "name": "Dallas Mavericks",
+    "shortname": "Mavericks",
+    "city": "Dallas",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/mavs.svg",
+    "slug": "nba-dal"
+  },
+  {
+    "name": "Brooklyn Nets",
+    "shortname": "Nets",
+    "city": "Brooklyn",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/nets.svg",
+    "slug": "nba-bk"
+  },
+  {
+    "name": "Denver Nuggets",
+    "shortname": "Nuggets",
+    "city": "Denver",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/nuggets.svg",
+    "slug": "nba-den"
+  },
+  {
+    "name": "Indiana Pacers",
+    "shortname": "Pacers",
+    "city": "Indiana",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/pacers.svg",
+    "slug": "nba-ind"
+  },
+  {
+    "name": "New Orleans Pelicans",
+    "shortname": "Pelicans",
+    "city": "New Orleans",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/pelicans.svg",
+    "slug": "nba-no"
+  },
+  {
+    "name": "Detroit Pistons",
+    "shortname": "Pistons",
+    "city": "Detroit",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/pistons.svg",
+    "slug": "nba-det"
+  },
+  {
+    "name": "Toronto Raptors",
+    "shortname": "Raptors",
+    "city": "Toronto",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/raptors.svg",
+    "slug": "nba-tor"
+  },
+  {
+    "name": "Houston Rockets",
+    "shortname": "Rockets",
+    "city": "Houston",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/rockets.svg",
+    "slug": "nba-hou"
+  },
+  {
+    "name": "San Antonio Spurs",
+    "shortname": "Spurs",
+    "city": "San Antonio",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/spurs.svg",
+    "slug": "nba-sa"
+  },
+  {
+    "name": "Phoenix Suns",
+    "shortname": "Suns",
+    "city": "Phoenix",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/suns.svg",
+    "slug": "nba-pho"
+  },
+  {
+    "name": "Oklahoma City Thunder",
+    "shortname": "Thunder",
+    "city": "Oklahoma City",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/thunder.svg",
+    "slug": "nba-okc"
+  },
+  {
+    "name": "Minnesota Timberwolves",
+    "shortname": "Timberwolves",
+    "city": "Minnesota",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/wolves.svg",
+    "slug": "nba-min"
+  },
+  {
+    "name": "Golden State Warriors",
+    "shortname": "Warriors",
+    "city": "Atlanta",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/warriors.svg",
+    "slug": "nba-gs"
+  },
+  {
+    "name": "Portland Trail Blazers",
+    "shortname": "Trail Blazers",
+    "city": "Atlanta",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/trailblazers.svg",
+    "slug": "nba-por"
+  },
+  {
+    "name": "Washington Wizards",
+    "shortname": "Wizards",
+    "city": "Atlanta",
+    "logo": "../../images/TeamLogos-Edited/Roster-Size/wizards.svg",
+    "slug": "nba-was"
+  }
+  
+]
