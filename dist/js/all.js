@@ -177,7 +177,7 @@ angular.module("brawlApp").service("mainService", ['$http', function ($http) {
       method: 'GET',
       url: '/getTeamInfo/' + id
     }).then(function (response) {
-      // console.log("hello" + response);
+      console.log("hello" + response);
       return response.data;
     });
   }; //get team-select logos

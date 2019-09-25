@@ -59,7 +59,7 @@ this.getDbData = function(id){
         url: '/getTeamInfo/' + id
 
     }).then(function(response){
-        // console.log("hello" + response);
+        console.log("hello" + response);
         return response.data;
     })
 }
