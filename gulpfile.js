@@ -93,7 +93,7 @@ function buildJS() {
   }
   function buildJSON(){
     console.log("Gulp: Rebuilding JSON with your changes");
-    return gulp.src('./public/JSON/*.json')
+    return gulp.src('./public/JSON/teams.json')
     .pipe(gulp.dest('./dist/JSON'));
   }
   
