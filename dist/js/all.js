@@ -383,7 +383,7 @@ angular.module("brawlApp").controller("rosterCtrl", ['$scope', '$timeout', 'main
 
   $scope.getTeamInfo = function (url) {
     mainService.getDbData(url).then(function (response) {
-      // console.log("Player Stats of Selected Team", response);
+      console.log("Player Stats of Selected Team", response);
       $scope.selectedTeam = response; // return response;
     });
   };
