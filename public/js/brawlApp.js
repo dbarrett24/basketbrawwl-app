@@ -15,14 +15,16 @@ angular.module("brawlApp", ['ui.router', 'ngAnimate'])
                 url: '/',
                 views:{
                     'home-header':{
-                        templateUrl: "/views/home-header/home-header.html"
+                        // templateUrl: "/views/home-header/home-header.html"
+                        templateUrl: "/views/home-header.html"
                     },
                     // 'player-header':{
                     //     templateUrl: "./views/player-header/player-header.html",
                     //     controller: "player-headerCtrl"
                     // },
                     'team-choices':{
-                        templateUrl: "/views/team-choices/team-choices.html",
+                        // templateUrl: "/views/team-choices/team-choices.html",
+                        templateUrl: "/views/team-choices.html",
                         controller: "team-choicesCtrl"
                     }
                 }
@@ -31,11 +33,13 @@ angular.module("brawlApp", ['ui.router', 'ngAnimate'])
                 url: '/team-select',
                 views:{
                     'player-header':{
-                        templateUrl: "/views/player-header/player-header.html",
+                        // templateUrl: "/views/player-header/player-header.html",
+                        templateUrl: "/views/player-header.html",
                         controller: "player-headerCtrl"
                     },
                     'team-choices':{
-                        templateUrl: "/views/team-choices/team-choices.html",
+                        // templateUrl: "/views/team-choices/team-choices.html",
+                        templateUrl: "/views/team-choices.html",
                         controller: "team-choicesCtrl"
                     }
                 }
@@ -44,11 +48,13 @@ angular.module("brawlApp", ['ui.router', 'ngAnimate'])
                 url: '/team-roster/:teamId',
                 views:{
                     'player-header':{
-                        templateUrl: "/views/player-header/player-header.html",
+                        // templateUrl: "/views/player-header/player-header.html",
+                        templateUrl: "/views/player-header.html",
                         controller: "rosterCtrl"
                     },
                     'roster':{
-                        templateUrl: "/views/roster/roster.html",
+                        // templateUrl: "/views/roster/roster.html",
+                        templateUrl: "/views/roster.html",
                         controller: "rosterCtrl"
                         
                     }
@@ -63,7 +69,8 @@ angular.module("brawlApp", ['ui.router', 'ngAnimate'])
                         
                     // },
                     'fight':{
-                        templateUrl: "/views/fight/fight.html",
+                        // templateUrl: "/views/fight/fight.html",
+                        templateUrl: "/views/fight.html",
                         controller: "fightCtrl"
                         
                     }
@@ -78,7 +85,8 @@ angular.module("brawlApp", ['ui.router', 'ngAnimate'])
                     
                     // },
                     'results':{
-                        templateUrl: "/views/results/results.html",
+                        // templateUrl: "/views/results/results.html",
+                        templateUrl: "/views/results.html",
                         controller: "fightCtrl"
                         
                     }

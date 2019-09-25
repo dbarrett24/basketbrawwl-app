@@ -14,14 +14,16 @@ angular.module("brawlApp", ['ui.router', 'ngAnimate']).config(['$stateProvider',
     url: '/',
     views: {
       'home-header': {
-        templateUrl: "/views/home-header/home-header.html"
+        // templateUrl: "/views/home-header/home-header.html"
+        templateUrl: "/views/home-header.html"
       },
       // 'player-header':{
       //     templateUrl: "./views/player-header/player-header.html",
       //     controller: "player-headerCtrl"
       // },
       'team-choices': {
-        templateUrl: "/views/team-choices/team-choices.html",
+        // templateUrl: "/views/team-choices/team-choices.html",
+        templateUrl: "/views/team-choices.html",
         controller: "team-choicesCtrl"
       }
     }
@@ -29,11 +31,13 @@ angular.module("brawlApp", ['ui.router', 'ngAnimate']).config(['$stateProvider',
     url: '/team-select',
     views: {
       'player-header': {
-        templateUrl: "/views/player-header/player-header.html",
+        // templateUrl: "/views/player-header/player-header.html",
+        templateUrl: "/views/player-header.html",
         controller: "player-headerCtrl"
       },
       'team-choices': {
-        templateUrl: "/views/team-choices/team-choices.html",
+        // templateUrl: "/views/team-choices/team-choices.html",
+        templateUrl: "/views/team-choices.html",
         controller: "team-choicesCtrl"
       }
     }
@@ -41,11 +45,13 @@ angular.module("brawlApp", ['ui.router', 'ngAnimate']).config(['$stateProvider',
     url: '/team-roster/:teamId',
     views: {
       'player-header': {
-        templateUrl: "/views/player-header/player-header.html",
+        // templateUrl: "/views/player-header/player-header.html",
+        templateUrl: "/views/player-header.html",
         controller: "rosterCtrl"
       },
       'roster': {
-        templateUrl: "/views/roster/roster.html",
+        // templateUrl: "/views/roster/roster.html",
+        templateUrl: "/views/roster.html",
         controller: "rosterCtrl"
       }
     }
@@ -57,7 +63,8 @@ angular.module("brawlApp", ['ui.router', 'ngAnimate']).config(['$stateProvider',
       //     controller: "player-headerCtrl"
       // },
       'fight': {
-        templateUrl: "/views/fight/fight.html",
+        // templateUrl: "/views/fight/fight.html",
+        templateUrl: "/views/fight.html",
         controller: "fightCtrl"
       }
     }
@@ -69,7 +76,8 @@ angular.module("brawlApp", ['ui.router', 'ngAnimate']).config(['$stateProvider',
       //     controller: "player-headerCtrl"
       // },
       'results': {
-        templateUrl: "/views/results/results.html",
+        // templateUrl: "/views/results/results.html",
+        templateUrl: "/views/results.html",
         controller: "fightCtrl"
       }
     }
@@ -201,7 +209,8 @@ angular.module("brawlApp").service("mainService", ['$http', function ($http) {
 angular.module("brawlApp").directive("footerDir", function () {
   return {
     restrict: "E",
-    templateUrl: "/directives/footer/footerDir.html"
+    // templateUrl: "/directives/footer/footerDir.html"
+    templateUrl: "/views/footerDir.html"
   };
 });
 "use strict";
@@ -209,7 +218,8 @@ angular.module("brawlApp").directive("footerDir", function () {
 angular.module("brawlApp").directive("navDir", function () {
   return {
     restrict: "E",
-    templateUrl: "/directives/nav/navDir.html"
+    // templateUrl: "/directives/nav/navDir.html"
+    templateUrl: "/views/navDir.html"
   };
 });
 "use strict";
@@ -217,7 +227,8 @@ angular.module("brawlApp").directive("navDir", function () {
 angular.module("brawlApp").directive("table-head-dir", function () {
   return {
     restrict: "E",
-    templateUrl: "/directives/table-head-dir/table-head-dir.html"
+    // templateUrl: "/directives/table-head-dir/table-head-dir.html"
+    templateUrl: "/views/table-head-dir.html"
   };
 });
 "use strict";
