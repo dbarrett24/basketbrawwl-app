@@ -201,7 +201,7 @@ angular.module("brawlApp").service("mainService", ['$http', function ($http) {
 angular.module("brawlApp").directive("footerDir", function () {
   return {
     restrict: "E",
-    templateUrl: "./directives/footer/footerDir.html"
+    templateUrl: "/directives/footer/footerDir.html"
   };
 });
 "use strict";
@@ -209,7 +209,7 @@ angular.module("brawlApp").directive("footerDir", function () {
 angular.module("brawlApp").directive("navDir", function () {
   return {
     restrict: "E",
-    templateUrl: "./directives/nav/navDir.html"
+    templateUrl: "/directives/nav/navDir.html"
   };
 });
 "use strict";
@@ -217,7 +217,7 @@ angular.module("brawlApp").directive("navDir", function () {
 angular.module("brawlApp").directive("table-head-dir", function () {
   return {
     restrict: "E",
-    templateUrl: "./directives/table-head-dir/table-head-dir.html"
+    templateUrl: "/directives/table-head-dir/table-head-dir.html"
   };
 });
 "use strict";
