@@ -1,6 +1,6 @@
 <section class="fight-view" ng-controller="fightCtrl">
     <nav-dir class="nav-dir2"></nav-dir>
-    <!-- <a ui-sref="results-view"><img src="../../images/Fight-View.png" class="view-img"></a> -->
+    <!-- <a ui-sref="results-view"><img src="./images/Fight-View.png" class="view-img"></a> -->
     <div class="transparency-wrapper">
         <div class="blue-side">
             <img ng-src="{{main.leftPlayer.teamlogo}}">
@@ -16,7 +16,7 @@
                     <p>{{leftGameResult}}</p>
                 </div>
                 <div class="player-card">
-                    <img ng-src="{{leftPlyrImgState || '../../images/Player heads/empty person.png'}}">
+                    <img ng-src="{{leftPlyrImgState || './images/Player heads/empty person.png'}}">
                     <div class="name-wrapper">
                         <p class="fight-font player-name">{{main.leftPlayer.playername}}</p>
                     </div>
@@ -55,7 +55,7 @@
                     <p>{{rightGameResult}}</p>
                 </div>
                 <div class="player-card">
-                    <img ng-src="{{rightPlyrImgState || '../../images/Player heads/empty person.png'}}">
+                    <img ng-src="{{rightPlyrImgState || './images/Player heads/empty person.png'}}">
                     <div class="name-wrapper">
                         <p class="fight-font player-name">{{main.rightPlayer.playername}}</p>
                     </div>
