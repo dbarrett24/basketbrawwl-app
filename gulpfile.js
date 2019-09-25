@@ -66,7 +66,17 @@ function buildJS() {
   
   function buildViews(){
     console.log("Gulp: Rebuilding HTML with your changes");
-    return gulp.src('./public/**/**/*.html')
+    // return gulp.src('./public/**/**/*.html')
+    return gulp.src([
+      './public/directives/footer/footerDir.html',
+      './public/directives/nav/navDir.html',
+      './public/directives/table-head-dir/table-head-dir.html',
+      './public/views/player-header/player-header.html',
+      './public/views/team-choices/team-choices.html',
+      './public/views/roster/roster.html',
+      './public/views/fight/fight.html',
+      './public/js/libraries/angular-animate.min.js'
+    ])   
     .pipe(gulp.dest('./dist/views'));
   }
   
