@@ -188,7 +188,7 @@ angular.module("brawlApp").service("mainService", ['$http', function ($http) {
       method: 'GET',
       url: "/JSON/teams.json"
     }).then(function (response) {
-      // console.log(response.data)
+      console.log(response.data);
       return response.data;
     });
   }; //******************DATABASE****************** */

@@ -71,7 +71,7 @@ this.getDbData = function(id){
             url:"/JSON/teams.json",
         }).then(function(response){
             
-            // console.log(response.data)
+            console.log(response.data)
             return response.data
         })
     }
