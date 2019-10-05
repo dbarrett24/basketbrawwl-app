@@ -1,4 +1,4 @@
-angular.module("brawlApp").controller("mainCtrl", ['$scope', 'mainService',function($scope, mainService){
+angular.module("brawlApp").controller("mainCtrl", ['$scope', '$timeout', 'mainService',function($scope,$timeout, mainService){
 // ***********************************   
 //                TEST 
     $scope.test = "Controller is working";
@@ -27,15 +27,23 @@ angular.module("brawlApp").controller("mainCtrl", ['$scope', 'mainService',funct
             // instance inside of a $timeout. This ensures that the slides
             // have already been assigned to scope before the slider is
             // initialized.
-            // $timeout(function () {
-            //     // Initialize our Flickity instance
-            //     FlickityService.create(element[0], element[0].id, $scope.flickityOptions);
-            // });
+            $timeout(function () {
+                // Initialize our Flickity instance
+                // FlickityService.create(element[0], element[0].id, $scope.flickityOptions);
+                $('.carousel-wrapper').flickity({
+                    // options
+                    cellSelector: '.carousel-cell',
+                    cellAlign: 'left',
+                    pageDots: false,
+                    // groupCells: 3,
+                    adaptiveHeight: false,
+                    imagesLoaded: true,
+                    autoPlay: true,
+                    contain: true
+                });
+            });
         });
 
-    
-
-    
 
 }]);
 

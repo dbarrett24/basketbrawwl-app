@@ -96,7 +96,7 @@ angular.module("brawlApp", ['ui.router', 'ngAnimate']).config(['$stateProvider',
 }]);
 "use strict";
 
-angular.module("brawlApp").controller("mainCtrl", ['$scope', 'mainService', function ($scope, mainService) {
+angular.module("brawlApp").controller("mainCtrl", ['$scope', '$timeout', 'mainService', function ($scope, $timeout, mainService) {
   // ***********************************   
   //                TEST 
   $scope.test = "Controller is working";
@@ -115,10 +115,22 @@ angular.module("brawlApp").controller("mainCtrl", ['$scope', 'mainService', func
     // instance inside of a $timeout. This ensures that the slides
     // have already been assigned to scope before the slider is
     // initialized.
-    // $timeout(function () {
-    //     // Initialize our Flickity instance
-    //     FlickityService.create(element[0], element[0].id, $scope.flickityOptions);
-    // });
+
+    $timeout(function () {
+      // Initialize our Flickity instance
+      // FlickityService.create(element[0], element[0].id, $scope.flickityOptions);
+      $('.carousel-wrapper').flickity({
+        // options
+        cellSelector: '.carousel-cell',
+        cellAlign: 'left',
+        pageDots: false,
+        // groupCells: 3,
+        adaptiveHeight: false,
+        imagesLoaded: true,
+        autoPlay: true,
+        contain: true
+      });
+    });
   });
 }]);
 "use strict";
@@ -188,7 +200,7 @@ angular.module("brawlApp").service("mainService", ['$http', function ($http) {
       method: 'GET',
       url: "/JSON/teams.json"
     }).then(function (response) {
-      console.log(response.data);
+      // console.log(response.data)
       return response.data;
     });
   }; //******************DATABASE****************** */
@@ -234,23 +246,22 @@ angular.module("brawlApp").directive("table-head-dir", function () {
 "use strict";
 
 angular.module("brawlApp").controller("player-headerCtrl", ['$scope', 'mainService', '$stateParams', function ($scope, mainService, $stateParams) {
-  mainService.getTeams().then(function (teamData) {
-    $scope.teamData = teamData; // console.log("teamJSON", $scope.teamData);
-
-    var team = teamData.find(function (team) {
-      return team.name === $stateParams.teamId;
-    });
-
-    if (team) {
-      $scope.teamSlug = team.name;
-      $scope.logo = team.logo;
-    } else {
-      return 'Atlanta Hawks';
-    }
-
-    return team.name;
-  });
-
+  //Already in Roster Controller
+  // mainService.getTeams()
+  //     .then(function(teamData){
+  //         $scope.teamData = teamData;
+  //         // console.log("teamJSON", $scope.teamData);
+  //         var team = teamData.find(function(team){
+  //             return team.name === $stateParams.teamId;
+  //         });
+  //         if(team) {
+  //             $scope.teamSlug = team.name;
+  //             $scope.logo = team.logo;
+  //         } else {
+  //             return 'Atlanta Hawks';
+  //         }
+  //         return team.name;
+  // });
   if ($scope.main.leftPlayer) {
     console.log("BEFORE HIDE");
     $(".player-portrait-1").children(".selectPlayer").hide();
@@ -383,7 +394,7 @@ angular.module("brawlApp").controller("rosterCtrl", ['$scope', '$timeout', 'main
 
   $scope.getTeamInfo = function (url) {
     mainService.getDbData(url).then(function (response) {
-      // console.log("Player Stats of Selected Team", response);
+      console.log("Player Stats of Selected Team", response);
       $scope.selectedTeam = response; // return response;
     });
   };

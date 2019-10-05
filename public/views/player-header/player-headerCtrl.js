@@ -2,22 +2,22 @@ angular.module("brawlApp").controller("player-headerCtrl", ['$scope','mainServic
  
 
 
-   
-    mainService.getTeams()
-        .then(function(teamData){
-            $scope.teamData = teamData;
-            // console.log("teamJSON", $scope.teamData);
-            var team = teamData.find(function(team){
-                return team.name === $stateParams.teamId;
-            });
-            if(team) {
-                $scope.teamSlug = team.name;
-                $scope.logo = team.logo;
-            } else {
-                return 'Atlanta Hawks';
-            }
-            return team.name;
-    });
+   //Already in Roster Controller
+    // mainService.getTeams()
+    //     .then(function(teamData){
+    //         $scope.teamData = teamData;
+    //         // console.log("teamJSON", $scope.teamData);
+    //         var team = teamData.find(function(team){
+    //             return team.name === $stateParams.teamId;
+    //         });
+    //         if(team) {
+    //             $scope.teamSlug = team.name;
+    //             $scope.logo = team.logo;
+    //         } else {
+    //             return 'Atlanta Hawks';
+    //         }
+    //         return team.name;
+    // });
 
 
     if($scope.main.leftPlayer){

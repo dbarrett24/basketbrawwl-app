@@ -31,7 +31,8 @@ db.set_schema(function(error, data){
 // });
 
 app.get('/getTeamInfo/:teamId', function(req, res, next) {
-    console.log(req.params.teamId);
+    // console.trace('getTeamInfo')
+    console.log(req.params.teamId, "server request parameter");
     db.get_specific_team([req.params.teamId], function(error, data) {
         if(error) {
             res.statusCode(500).json(error);
@@ -39,18 +40,10 @@ app.get('/getTeamInfo/:teamId', function(req, res, next) {
         }
         else {
             res.json(data);
+            // console.log(data, "all the data sent in the response")
         }
     })
 });
-
-
-
-
-
-
-
-
-
 
 
 app.listen(config.port, function(){
