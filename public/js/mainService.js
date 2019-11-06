@@ -54,12 +54,14 @@ angular.module("brawlApp").service("mainService", ['$http', function($http){
 // ****************************************
 
 this.getDbData = function(id){
+    console.log(id)
+    
     return $http ({
         method: 'GET',
         url: '/getTeamInfo/' + id
 
     }).then(function(response){
-        console.log("hello" + response);
+        console.log("hello" + response.data);
         return response.data;
     })
 }

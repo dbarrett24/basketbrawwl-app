@@ -73,6 +73,7 @@ angular.module("brawlApp").controller("rosterCtrl", ['$scope', '$timeout', 'main
         });
     }
     $scope.getTeamInfo(url);
+    
     // ---------------------------------------
 
 //Returns correct URL ending for what is team is selected.

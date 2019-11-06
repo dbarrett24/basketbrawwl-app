@@ -1,6 +1,8 @@
 var express = require('express');
 var cors = require('cors');
 var massive = require('massive');
+var winston = require('winston');
+var expressWinston = require('express-winston');
 
 var app = module.exports = express();
 app.use(express.json());
@@ -9,6 +11,16 @@ app.use(express.static(__dirname + '/dist'));
 app.use(express.static(__dirname + '/public'));
 // app.use('/static/', express.static(__dirname + '/node_modules/'));
 
+const logConfiguration = {
+    'transports': [
+        new winston.transports.File({
+            filename: './logs/example.log'
+        })
+    ]
+}
+const logger = winston.createLogger(logConfiguration);
+
+logger.info('Hello, Winston!');
 
 var config = require('./config.js');
 var db = massive.connectSync({connectionString : config.elephantSQL});
@@ -32,7 +44,7 @@ db.set_schema(function(error, data){
 
 app.get('/getTeamInfo/:teamId', function(req, res, next) {
     // console.trace('getTeamInfo')
-    console.log(req.params.teamId, "server request parameter");
+    console.log(req.params.teamId, "server request parameter: teamID");
     db.get_specific_team([req.params.teamId], function(error, data) {
         if(error) {
             res.statusCode(500).json(error);
@@ -40,7 +52,6 @@ app.get('/getTeamInfo/:teamId', function(req, res, next) {
         }
         else {
             res.json(data);
-            // console.log(data, "all the data sent in the response")
         }
     })
 });

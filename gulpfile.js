@@ -45,7 +45,6 @@ function buildJS() {
     return gulp.src([
       './public/js/brawlApp.js',
       './public/js/mainCtrl.js',
-      './public/js/mainService.js',
       './public/directives/footer/footerDir.js',
       './public/directives/nav/navDir.js',
       './public/directives/table-head-dir/table-head-dir.js',
@@ -53,6 +52,7 @@ function buildJS() {
       './public/views/team-choices/team-choicesCtrl.js',
       './public/views/roster/rosterCtrl.js',
       './public/views/fight/fightCtrl.js',
+      './public/js/mainService.js',
       './public/js/libraries/angular-animate.min.js'
     ])              
     .pipe(babel({ presets: ['@babel/preset-env'] }))

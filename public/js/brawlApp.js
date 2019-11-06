@@ -49,8 +49,8 @@ angular.module("brawlApp", ['ui.router', 'ngAnimate'])
                 views:{
                     'player-header':{
                         // templateUrl: "/views/player-header/player-header.html",
-                        templateUrl: "/views/player-header.html",
-                        controller: "rosterCtrl"
+                        templateUrl: "/views/player-header.html"
+                        // controller: "rosterCtrl"
                     },
                     'roster':{
                         // templateUrl: "/views/roster/roster.html",
