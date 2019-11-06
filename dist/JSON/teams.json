@@ -7,35 +7,35 @@
     "slug": "nba-atl"
   },
   {
-    "name": "philadelphia 76ers",
+    "name": "Philadelphia 76ers",
     "shortname": "76ers",
     "city": "Philadelphia",
     "logo": "./images/TeamLogos-Edited/Roster-Size/sixers.svg",
     "slug": "nba-phi"
   },
   {
-    "name": "milwaukee bucks",
+    "name": "Milwaukee Bucks",
     "shortname": "Bucks",
     "city": "Milwaukee",
     "logo": "./images/TeamLogos-Edited/Roster-Size/bucks.svg",
     "slug": "nba-mil"
   },
   {
-    "name": "chicago bulls",
+    "name": "Chicago Bulls",
     "shortname": "Bulls",
     "city": "Chicago",
     "logo": "./images/TeamLogos-Edited/Roster-Size/bulls.svg",
     "slug": "nba-chi"
   },
   {
-    "name": "cleveland cavaliers",
+    "name": "Cleveland Cavaliers",
     "shortname": "Cavaliers",
     "city": "Cleveland",
     "logo": "./images/TeamLogos-Edited/Roster-Size/cavs.svg",
     "slug": "nba-cle"
   },
   {
-    "name": "boston celtics",
+    "name": "Boston Celtics",
     "shortname": "Celtics",
     "city": "Boston",
     "logo": "./images/TeamLogos-Edited/Roster-Size/celtics.svg",

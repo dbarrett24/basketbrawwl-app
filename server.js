@@ -41,7 +41,7 @@ db.set_schema(function(error, data){
 //     })
 // });
 
-app.get('/getTeamInfo/:teamId', function(req, res, next) {
+app.get('/getteaminfo/:teamId', function(req, res, next) {
     logger.info(req.params.teamId);
     console.log(req.params.teamId, "server request parameter: teamID");
     db.get_specific_team([req.params.teamId], function(error, data) {

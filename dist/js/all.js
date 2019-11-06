@@ -603,7 +603,7 @@ angular.module("brawlApp").service("mainService", ['$http', function ($http) {
     console.log(id);
     return $http({
       method: 'GET',
-      url: '/getTeamInfo/' + id
+      url: '/getteaminfo/' + id
     }).then(function (response) {
       console.log("hello" + response.data);
       return response.data;
