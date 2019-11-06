@@ -20,7 +20,6 @@ const logConfiguration = {
 }
 const logger = winston.createLogger(logConfiguration);
 
-logger.info('Hello, Winston!');
 
 var config = require('./config.js');
 var db = massive.connectSync({connectionString : config.elephantSQL});
@@ -43,15 +42,17 @@ db.set_schema(function(error, data){
 // });
 
 app.get('/getTeamInfo/:teamId', function(req, res, next) {
-    // console.trace('getTeamInfo')
+    logger.info(req.params.teamId);
     console.log(req.params.teamId, "server request parameter: teamID");
     db.get_specific_team([req.params.teamId], function(error, data) {
         if(error) {
             res.statusCode(500).json(error);
-        
+            logger.info(res);
+            
         }
         else {
             res.json(data);
+            logger.info(res);
         }
     })
 });
