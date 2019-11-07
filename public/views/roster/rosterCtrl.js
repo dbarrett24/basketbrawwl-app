@@ -80,7 +80,7 @@ angular.module("brawlApp").controller("rosterCtrl", ['$scope', '$timeout', 'main
     mainService.getTeams()
     
         .then(function(teamData){
-            $scope.teamData = teamData;
+            console.log($scope.teamData);
             // console.log("teamJSON", $scope.teamData);
             var team = teamData.find(function(team){
                 console.log($stateParams.teamId)

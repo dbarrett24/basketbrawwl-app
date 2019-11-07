@@ -58,7 +58,7 @@ this.getDbData = function(id){
     
     return $http ({
         method: 'GET',
-        url: '/getteaminfo/' + id
+        url: '/getTeamInfo/' + id
 
     }).then(function(response){
         console.log("hello" + response.data);

@@ -107,30 +107,14 @@ angular.module("brawlApp").controller("mainCtrl", ['$scope', '$timeout', 'mainSe
   //THIS HAS to be in MainCTRL for the flickity slider to work.
 
   mainService.getTeams().then(function (teamData) {
-    $scope.teamData = teamData;
-    console.log($scope.teamData); // Get the element that should hold the slider
+    $scope.teamData = teamData; // console.log($scope.teamData)
+    // Get the element that should hold the slider
 
-    var element = angular.element(document.getElementById('team-slider'));
-    console.log(element); // NOTE: When fetching remote data, we initialize the Flickity
+    var element = angular.element(document.getElementById('team-slider')); // console.log(element);
+    // NOTE: When fetching remote data, we initialize the Flickity
     // instance inside of a $timeout. This ensures that the slides
     // have already been assigned to scope before the slider is
     // initialized.
-
-    $timeout(function () {
-      // Initialize our Flickity instance
-      // FlickityService.create(element[0], element[0].id, $scope.flickityOptions);
-      $('.carousel-wrapper').flickity({
-        // options
-        cellSelector: '.carousel-cell',
-        cellAlign: 'left',
-        pageDots: false,
-        // groupCells: 3,
-        adaptiveHeight: false,
-        imagesLoaded: true,
-        autoPlay: true,
-        contain: true
-      });
-    });
   });
 }]);
 "use strict";
@@ -204,14 +188,7 @@ angular.module("brawlApp").controller("player-headerCtrl", ['$scope', 'mainServi
 
 angular.module("brawlApp").controller("team-choicesCtrl", ['$scope', 'mainService', '$stateParams', '$document', '$timeout', function ($scope, mainService, $stateParams, $document, $timeout) {
   $(document).ready(function () {
-    $('.player-header-1').css('position', 'relative'); // $('.carousel-wrapper').slick({
-    //     infinite: true,
-    //     slidesToShow: 5,
-    //     slidesToScroll: 2,
-    //     autoplay: true,
-    //     autoplaySpeed: 3500
-    // });
-
+    $('.player-header-1').css('position', 'relative');
     $('.carousel-wrapper').flickity({
       // options
       cellSelector: '.carousel-cell',
@@ -223,32 +200,7 @@ angular.module("brawlApp").controller("team-choicesCtrl", ['$scope', 'mainServic
       autoPlay: true,
       contain: true
     });
-  }); // $scope.flickityOptions = {
-  //     // options
-  //     cellSelector: '.carousel-cell',
-  //     cellAlign: 'left',
-  //     pageDots: false,
-  //     // groupCells: 3,
-  //     adaptiveHeight: false,
-  //     imagesLoaded: true,
-  //     autoPlay: true,
-  //     contain: true
-  // }
-  // mainService.getTeams().then(function (teamData) {
-  //     $scope.teamData = teamData;
-  //     console.log($scope.teamData)
-  //     // Get the element that should hold the slider
-  //     var element = angular.element(document.getElementById('team-slider'));
-  //     console.log(element);
-  //     // NOTE: When fetching remote data, we initialize the Flickity
-  //     // instance inside of a $timeout. This ensures that the slides
-  //     // have already been assigned to scope before the slider is
-  //     // initialized.
-  //     $timeout(function () {
-  //         // Initialize our Flickity instance
-  //         FlickityService.create(element[0], element[0].id, $scope.flickityOptions);
-  //     });
-  // });
+  });
 }]);
 "use strict";
 
@@ -320,7 +272,7 @@ angular.module("brawlApp").controller("rosterCtrl", ['$scope', '$timeout', 'main
   //Returns correct URL ending for what is team is selected.
 
   mainService.getTeams().then(function (teamData) {
-    $scope.teamData = teamData; // console.log("teamJSON", $scope.teamData);
+    console.log($scope.teamData); // console.log("teamJSON", $scope.teamData);
 
     var team = teamData.find(function (team) {
       console.log($stateParams.teamId);
@@ -603,7 +555,7 @@ angular.module("brawlApp").service("mainService", ['$http', function ($http) {
     console.log(id);
     return $http({
       method: 'GET',
-      url: '/getteaminfo/' + id
+      url: '/getTeamInfo/' + id
     }).then(function (response) {
       console.log("hello" + response.data);
       return response.data;

@@ -41,18 +41,18 @@ db.set_schema(function(error, data){
 //     })
 // });
 
-app.get('/getteaminfo/:teamId', function(req, res, next) {
-    logger.info(req.params.teamId);
+app.get('/getTeamInfo/:teamId', function(req, res, next) {
+    logger.error(req.params.teamId);
     console.log(req.params.teamId, "server request parameter: teamID");
     db.get_specific_team([req.params.teamId], function(error, data) {
         if(error) {
             res.statusCode(500).json(error);
-            logger.info(res);
+            logger.error(res);
             
         }
         else {
             res.json(data);
-            logger.info(res);
+            logger.error(res);
         }
     })
 });
