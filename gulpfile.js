@@ -1,6 +1,7 @@
 
 
 var gulp = require('gulp')
+,   del = require('del')
 ,   sourcemaps = require('gulp-sourcemaps')
 ,   sass = require('gulp-sass')
 ,   babel = require('gulp-babel')
@@ -11,6 +12,10 @@ var gulp = require('gulp')
 
 var cachebust = new CacheBuster();  //need this constructor function
 
+
+function clean(){
+  return del(['./dist/**/*'])
+}
 
 function buildCSS(){
     console.log("Gulp: Rebuilding CSS with your changes");
@@ -141,4 +146,4 @@ function buildJS() {
 
 // gulp.task(series(build, watch));
 
-gulp.task('default', gulp.series(buildViews, buildCSS, buildJS, buildImages, buildFonts, buildJSON, build, watch));
+gulp.task('default', gulp.series(clean, buildViews, buildCSS, buildJS, buildImages, buildFonts, buildJSON, build, watch));
