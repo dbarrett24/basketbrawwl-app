@@ -14,7 +14,7 @@
     "@babel/preset-env": "^7.5.5",
     "cors": "^2.8.1",
     "del": "^5.1.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-winston": "^4.0.1",
     "flickity": "^2.0.10",
     "flickity-imagesloaded": "^2.0.0",
